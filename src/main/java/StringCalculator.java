@@ -5,8 +5,12 @@ public class StringCalculator {
         }
         if(numbers.contains(","))
         {
+            int result = 0;
             String[] arr=numbers.split(",");
-            return Integer.parseInt(arr[0])+Integer.parseInt(arr[1]);
+            for(String elem:arr){
+                result += Integer.parseInt(elem);
+            }
+            return result;
         }
         return Integer.parseInt(numbers);
     }
