@@ -6,7 +6,8 @@ public class StringCalculator {
         if(numbers.contains(","))
         {
             int result = 0;
-            String[] arr=numbers.split(",");
+            String nstring=numbers.replaceAll("\n",",");
+            String[] arr=nstring.split(",");
             for(String elem:arr){
                 result += Integer.parseInt(elem);
             }
