@@ -13,7 +13,7 @@ public class StringCalculator {
                 int no=Integer.parseInt(elem);
                 try {
                     if(no<0) {
-                        throw new NegativeNoException(no);
+                        throw new NegativeNoException(arr);
                     }
                 } catch (NegativeNoException e) {
                     return -99;
@@ -31,7 +31,7 @@ public class StringCalculator {
                 int no=Integer.parseInt(elem);
                 try {
                     if(no<0) {
-                        throw new NegativeNoException(no);
+                        throw new NegativeNoException(arr);
                     }
                 } catch (NegativeNoException e) {
                     return -99;
@@ -44,7 +44,13 @@ public class StringCalculator {
     }
 }
 class NegativeNoException extends Exception{
-    public NegativeNoException(int no){
-        System.out.println("negatives not allowed"+no);
+    public NegativeNoException(String[] no){
+        for(String var:no)
+        {
+            if (Integer.parseInt(var)<0)
+            {
+                System.out.println("negatives not allowed"+var);
+            }
+        }
     }
 }
