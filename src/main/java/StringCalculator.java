@@ -10,6 +10,14 @@ public class StringCalculator {
             String[] arr=newnum.split(String.valueOf(delimeter));
             for(String elem:arr)
             {
+                int no=Integer.parseInt(elem);
+                try {
+                    if(no<0) {
+                        throw new NegativeNoException(no);
+                    }
+                } catch (NegativeNoException e) {
+                    return -99;
+                }
                 result=result+Integer.parseInt(elem);
             }
             return result;
@@ -20,10 +28,23 @@ public class StringCalculator {
             String nstring=numbers.replaceAll("\n",",");
             String[] arr=nstring.split(",");
             for(String elem:arr){
+                int no=Integer.parseInt(elem);
+                try {
+                    if(no<0) {
+                        throw new NegativeNoException(no);
+                    }
+                } catch (NegativeNoException e) {
+                    return -99;
+                }
                 result += Integer.parseInt(elem);
             }
             return result;
         }
         return Integer.parseInt(numbers);
+    }
+}
+class NegativeNoException extends Exception{
+    public NegativeNoException(int no){
+        System.out.println("negatives not allowed"+no);
     }
 }
