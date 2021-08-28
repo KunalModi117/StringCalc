@@ -20,15 +20,17 @@ public class StringCalculator {
                 } catch (NegativeNoException e) {
                     return -99;
                 }
-                result=result+Integer.parseInt(elem);
+                if(no<=1000) {
+                    result += no;
+                }
             }
             return result;
         }
-        if(numbers.contains(","))
-        {
+        if(numbers.contains(",")) {
             int result = 0;
-            String nstring=numbers.replaceAll("\n",",");
-            String[] arr=nstring.split(",");
+            String nstring = numbers.replaceAll("\n", ",");
+            String[] arr = nstring.split(",");
+
             for(String elem:arr){
                 int no=Integer.parseInt(elem);
                 try {
@@ -38,7 +40,9 @@ public class StringCalculator {
                 } catch (NegativeNoException e) {
                     return -99;
                 }
-                result += Integer.parseInt(elem);
+                if(no<=1000) {
+                    result += no;
+                }
             }
             return result;
         }
