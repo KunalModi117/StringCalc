@@ -1,5 +1,7 @@
 public class StringCalculator {
+    static int calls=0;
     public int add(String numbers) {
+        calls++;
         if(numbers.equals("")){
             return 0;
         }
@@ -41,6 +43,10 @@ public class StringCalculator {
             return result;
         }
         return Integer.parseInt(numbers);
+    }
+
+    public int GetCalledCount() {
+        return calls;
     }
 }
 class NegativeNoException extends Exception{
