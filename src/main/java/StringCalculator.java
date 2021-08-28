@@ -5,8 +5,32 @@ public class StringCalculator {
         if(numbers.equals("")){
             return 0;
         }
+        if(numbers.startsWith("//["))
+        {
+            int result = 0;
+            String delimeter=numbers.substring(3,numbers.indexOf(']'));
+            String newnum=numbers.substring(numbers.indexOf(']')+2);
+            newnum=newnum.replace(delimeter,",");
+            String[] arr=newnum.split(",");
+            for(String elem:arr)
+            {
+                int no=Integer.parseInt(elem);
+                try {
+                    if(no<0) {
+                        throw new NegativeNoException(arr);
+                    }
+                } catch (NegativeNoException e) {
+                    return -99;
+                }
+                if(no<=1000) {
+                    result += no;
+                }
+            }
+            return result;
+        }
         if(numbers.startsWith("//"))
-        {   int result = 0;
+        {
+            int result = 0;
             char delimeter=numbers.charAt(2);
             String newnum=numbers.substring(4);
             String[] arr=newnum.split(String.valueOf(delimeter));

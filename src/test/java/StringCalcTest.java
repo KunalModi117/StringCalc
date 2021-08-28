@@ -17,6 +17,7 @@ public class StringCalcTest {
         assertEquals(-99,s1.add("-5,-1"));
         assertEquals(9,s1.GetCalledCount());
         assertEquals(2,s1.add("2,1001"));
+        assertEquals(15,s1.add("//[***]\n5***5***5"));
 
     }
 }
