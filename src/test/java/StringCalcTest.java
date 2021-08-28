@@ -19,6 +19,7 @@ public class StringCalcTest {
         assertEquals(2,s1.add("2,1001"));
         assertEquals(15,s1.add("//[***]\n5***5***5"));
         assertEquals(15,s1.add("//[*][#]\n5*5#5"));
+        assertEquals(15,s1.add("//[**][%%]\n5**5%%5"));
 
     }
 }
